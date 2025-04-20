@@ -11,8 +11,9 @@ import org.springframework.data.neo4j.core.schema.Relationship;
 
 @Node
 public class Product {
-	@Id @GeneratedValue private Long id;
-
+	@Id @GeneratedValue 
+	private Long id;
+	
 	private String productId;
 	private String name;
 	private String description;
@@ -29,6 +30,8 @@ public class Product {
 		this.tags = tags;
 	}
 
+	public Product() {
+	}
 
 	public Product(String productId, String name, String description, String category, List<String> tags) {
 		this.productId = productId;

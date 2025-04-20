@@ -1,0 +1,10 @@
+services:
+  neo4j:
+    image: bitnami/neo4j:latest
+    container_name: neo4j-default
+    ports:
+      - '7474:7474'
+      - '7473:7473'
+      - '7687:7687'
+    environment:
+      - NEO4J_PASSWORD=11111111

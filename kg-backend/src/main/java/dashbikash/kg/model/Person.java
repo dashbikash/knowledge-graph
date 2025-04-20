@@ -51,27 +51,6 @@ public class Person {
 		this.role = role;
 	}
 
-	/**
-	 * Neo4j doesn't REALLY have bi-directional relationships. It just means when
-	 * querying to ignore the direction of the relationship.
-	 * https://dzone.com/articles/modelling-data-neo4j
-	 */
-	@Relationship(type = "TEAMMATE")
-	public Set<Person> teammates;
-
-	public void worksWith(Person person) {
-		if (teammates == null) {
-			teammates = new HashSet<>();
-		}
-		teammates.add(person);
-	}
-
-	public String toString() {
-
-		return this.name + "'s teammates => " + Optional.ofNullable(this.teammates).orElse(Collections.emptySet())
-				.stream().map(Person::getName).collect(Collectors.toList());
-	}
-
 	public String getName() {
 		return name;
 	}
