@@ -44,7 +44,7 @@ function App() {
         label: {
           show: true,
           position: 'right',
-          formatter: '{b}'
+          formatter: 'This is {b}',
         },
         labelLayout: {
           hideOverlap: true
@@ -55,7 +55,7 @@ function App() {
         },
         lineStyle: {
           color: 'source',
-          curveness: 0.2
+          curveness: 0.3
         }
       }
     ]
