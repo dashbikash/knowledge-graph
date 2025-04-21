@@ -20,11 +20,9 @@ public class Product {
 	private String category;
 	private List<String> tags;
 	
-	
 	public List<String> getTags() {
 		return tags;
 	}
-
 
 	public void setTags(List<String> tags) {
 		this.tags = tags;
@@ -68,41 +66,32 @@ public class Product {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	@Relationship(type = "CL")
-	public Person componentLead;
-	@Relationship(type = "PM")
-	public Person prodManager;
-	@Relationship(type = "TPM")
-	public Person progManager;
+	@Relationship(type = "COMPONENT_LEAD")
+	private Person componentLead;
 	@Relationship(type = "ENGINEERS")
-	public Set<Person> engineers;
-	@Relationship(type = "ProdSupport")
-	public Set<Person> prodSupport;
+	private Set<Person> engineers;
 	
-	
-	
-	public void associatedEngineer(Person person) {
+	public Person getComponentLead() {
+		return componentLead;
+	}
+
+	public Set<Person> getEngineers() {
+		return engineers;
+	}
+
+	public void assignEngieer(Person person) {
 		if (engineers == null) {
 			engineers = new HashSet<>();
 		}
 		engineers.add(person);
 	}
 	
-	public void associatedProdSupport(Person person) {
-		if (engineers == null) {
-			engineers = new HashSet<>();
-		}
-		engineers.add(person);
+	public Long getId() {
+		return id;
 	}
-	
-	public void associatedCL(Person person) {
+
+	public void assignedComponentLead(Person person) {
 		componentLead=person;
-	}
-	public void assiciatedPM(Person person) {
-		prodManager=person;
-	}
-	public void assiciatedTPM(Person person) {
-		progManager=person;
 	}
 	
 

@@ -1,50 +1,52 @@
 import ReactECharts from 'echarts-for-react';
-import { productGraph } from './data';
-
+import { useEffect, useState } from 'react';
+import jsondata from "./assets/products.json";
 
 
 function App() {
   // const [count, setCount] = useState(0)
-  const graph = productGraph;
+  const [graph, setGraph] = useState<{ nodes: any[]; edges: any[], categories: any[] }>({
+    nodes: [],
+    edges: [],
+    categories: []
+  });
+  useEffect(() => {
+    setGraph(jsondata);
+  }, []);
   const option = {
     tooltip: {},
     legend: [
       {
         data: graph.categories.map((a) => {
           return a.name;
-        })
+        }),
       }
     ],
     toolbox: {
 
       feature: {
-        dataZoom: {
-          show: true,
-          xAxixIndex: [0],
-          yAxixIndex: [0],
-        },
         restore: {},
         saveAsImage: {}
       }
     },
     series: [
       {
-        name: 'Les Miserables',
+        // name: 'Les Miserables',
         type: 'graph',
         layout: 'force',
         force: {
-          repulsion: 1000,
+          repulsion: 500,
           edgeLength: [50, 200],
           gravity: 0.1
         },
-        data: graph.nodes,
-        links: graph.links,
+        nodes: graph.nodes,
+        edges: graph.edges,
         categories: graph.categories,
         roam: true,
         label: {
           show: true,
           position: 'right',
-          formatter: 'This is {b}',
+          formatter: '{b}',
         },
         labelLayout: {
           hideOverlap: true
@@ -56,16 +58,24 @@ function App() {
         lineStyle: {
           color: 'source',
           curveness: 0.3
+        },
+        emphasis: {
+          focus: 'adjacency',
+          label: {
+            position: 'right',
+            show: true
+          }
         }
       }
     ]
   };
 
-
-
   return (
     <div style={{ height: '100vh' }}>
-      <h1 style={{ textAlign: 'center' }}>Knowledge Graph</h1>
+      <div style={{padding:'5px', backgroundColor: '#11319a',color:'white',textAlign:'center' ,fontWeight:'bold' ,fontSize:'42px'}}>
+        Knowledge Graph
+      </div>
+
       <ReactECharts
         option={option}
         style={{ height: '90%' }}

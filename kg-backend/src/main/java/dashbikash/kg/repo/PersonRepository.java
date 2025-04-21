@@ -1,4 +1,4 @@
-package dashbikash.kg.dto;
+package dashbikash.kg.repo;
 
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 

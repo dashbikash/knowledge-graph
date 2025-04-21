@@ -24,6 +24,8 @@ dependencies {
     implementation 'com.graphql-java-kickstart:graphql-spring-boot-starter:12.0.0'
     // GraphQL Tools
     implementation 'com.graphql-java-kickstart:graphql-java-tools:12.0.0'
+    // Gradle
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0'
 	
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.projectreactor:reactor-test'

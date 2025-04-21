@@ -1,33 +1,29 @@
 package dashbikash.kg.controller;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import dashbikash.kg.dto.ProductRepository;
-import dashbikash.kg.model.Product;
+import dashbikash.kg.service.GraphService;
 
 @RestController
 @RequestMapping("/api/graph")
+@CrossOrigin(maxAge = 3600)
 public class GraphController {
-	
-	@Autowired
-	private ProductRepository productRepository;
+	private GraphService graphService;
+	public GraphController(GraphService graphService) {
+		this.graphService = graphService;
+	}
 
-	@GetMapping("")
-	public String index() {
-		return "Api For Graph";
+	@GetMapping()
+	public ResponseEntity<Object> fullProductGraph() {
+		return ResponseEntity.ok(graphService.getFullGraph());
 	}
 	
-	@GetMapping("/test")
-	public ResponseEntity<Object> getAllProducts() {
-		List<Product> products = productRepository.findAll();
-		
-		
-		return ResponseEntity.ok(products);
-	}
+	
+	
+	
+	
 }

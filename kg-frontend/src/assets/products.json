@@ -1,0 +1,176 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "name": "Search Engine",
+            "category": 0,
+            "symbolSize": 60
+        },
+        {
+            "id": "2",
+            "name": "Knowledge Graph",
+            "category": 0,
+            "symbolSize": 60
+        },
+        {
+            "id": "3",
+            "name": "Engineer Alpha",
+            "category": 1,
+            "symbolSize": 30
+        },
+        {
+            "id": "4",
+            "name": "Engineer Beta",
+            "category": 1,
+            "symbolSize": 30
+        },
+        {
+            "id": "5",
+            "name": "Engineer Gamma",
+            "category": 1,
+            "symbolSize": 30
+        },
+        {
+            "id": "6",
+            "name": "Engineer Delta",
+            "category": 1,
+            "symbolSize": 30
+        },
+        {
+            "id": "7",
+            "name": "Engineer Epsilon",
+            "category": 1,
+            "symbolSize": 30
+        },
+        {
+            "id": "8",
+            "name": "Engineer Zeta",
+            "category": 1,
+            "symbolSize": 30
+        },
+        {
+            "id": "9",
+            "name": "Engineer Eta",
+            "category": 1,
+            "symbolSize": 30
+        },
+        {
+            "id": "10",
+            "name": "Manager Alpha",
+            "category": 2,
+            "symbolSize": 30
+        },
+        {
+            "id": "11",
+            "name": "Feature A",
+            "category": 3,
+            "symbolSize": 20
+        },
+        {
+            "id": "12",
+            "name": "Feature B",
+            "category": 3,
+            "symbolSize": 20
+        },
+        {
+            "id": "13",
+            "name": "Feature C",
+            "category": 3,
+            "symbolSize": 20
+        },
+        {
+            "id": "14",
+            "name": "Feature D",
+            "category": 3,
+            "symbolSize": 20
+        },
+        {
+            "id": "15",
+            "name": "Feature E",
+            "category": 3,
+            "symbolSize": 20
+        },
+        {
+            "id": "16",
+            "name": "Feature F",
+            "category": 3,
+            "symbolSize": 20
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "target": "3"
+        },
+        {
+            "source": "1",
+            "target": "4"
+        },
+        {
+            "source": "1",
+            "target": "5"
+        },
+        {
+            "source": "2",
+            "target": "6"
+        },
+        {
+            "source": "2",
+            "target": "7"
+        },
+        {
+            "source": "2",
+            "target": "8"
+        },
+        {
+            "source": "2",
+            "target": "9"
+        },
+        {
+            "source": "1",
+            "target": "10"
+        },
+        {
+            "source": "2",
+            "target": "10"
+        },
+        {
+            "source": "1",
+            "target": "11"
+        },
+        {
+            "source": "1",
+            "target": "12"
+        },
+        {
+            "source": "2",
+            "target": "13"
+        },
+        {
+            "source": "2",
+            "target": "14"
+        },
+        {
+            "source": "1",
+            "target": "15"
+        },
+        {
+            "source": "2",
+            "target": "16"
+        }
+    ],
+    "categories": [
+      {
+        "name": "Product"
+      },
+      {
+        "name": "Engineer"
+      },
+      {
+        "name": "Manager"
+      },
+      {
+        "name": "Feature"
+      }
+    ]
+}

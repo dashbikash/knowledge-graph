@@ -10,14 +10,14 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.neo4j.repository.config.EnableNeo4jRepositories;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
-import dashbikash.kg.dto.PersonRepository;
-import dashbikash.kg.dto.ProductRepository;
 import dashbikash.kg.model.Person;
 import dashbikash.kg.model.Product;
+import dashbikash.kg.repo.PersonRepository;
+import dashbikash.kg.repo.ProductRepository;
 
-@SpringBootApplication
-@EnableNeo4jRepositories
+@SpringBootApplication()
 public class KnowledgeGraphApplication {
 
 	private final static Logger log = LoggerFactory.getLogger(KnowledgeGraphApplication.class);
@@ -54,12 +54,11 @@ public class KnowledgeGraphApplication {
 			personRepository.save(eng3);
 			
 			
-			kg.associatedCL(bikash);
-			se.assiciatedPM(dash);
-			se.assiciatedTPM(prakash);
-			se.associatedEngineer(eng1);
-			se.associatedEngineer(eng2);
-			se.associatedEngineer(eng3);
+			kg.assignedComponentLead(bikash);
+			se.assignedComponentLead(prakash);
+			se.assignEngieer(eng1);
+			se.assignEngieer(eng2);
+			kg.assignEngieer(eng3);
 			
 			productRepository.save(kg);
 			productRepository.save(se);
