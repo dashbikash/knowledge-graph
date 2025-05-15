@@ -68,8 +68,10 @@ public class Product {
 	}
 	@Relationship(type = "COMPONENT_LEAD")
 	private Person componentLead;
-	@Relationship(type = "ENGINEERS")
+	@Relationship(type = "ENGINEER")
 	private Set<Person> engineers;
+	@Relationship(type = "FEATURE")
+	private Set<Feature> features;
 	
 	public Person getComponentLead() {
 		return componentLead;
@@ -79,19 +81,35 @@ public class Product {
 		return engineers;
 	}
 
-	public void assignEngieer(Person person) {
+	public void addEngieer(Person person) {
 		if (engineers == null) {
 			engineers = new HashSet<>();
 		}
 		engineers.add(person);
+	}
+	public void deleteEngieer(Person person) {
+		if (engineers == null) {
+			engineers.remove(person);
+		}
 	}
 	
 	public Long getId() {
 		return id;
 	}
 
-	public void assignedComponentLead(Person person) {
+	public void setComponentLead(Person person) {
 		componentLead=person;
+	}
+	public void addFeature(Feature feature) {
+		if (features == null) {
+			features = new HashSet<>();
+		}
+		features.add(feature);
+	}
+	public void deleteFeature(Feature feature) {
+		if (features == null) {
+			features.remove(feature);
+		}
 	}
 	
 
