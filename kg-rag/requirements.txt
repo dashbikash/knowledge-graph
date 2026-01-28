@@ -1,5 +1,6 @@
 neo4j
 langchain-community
+langchain-huggingface
 sentence-transformers 
 transformers
 
