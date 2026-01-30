@@ -1,0 +1,9 @@
+services:
+  janusgraph:
+    image: bikashpdash/janusgraph:latest
+    container_name: janusgraph-default
+    ports:
+      - "8182:8182"
+
+volumes:
+  janusgraph-default-data:
