@@ -2,8 +2,11 @@ services:
   janusgraph:
     image: bikashpdash/janusgraph:latest
     container_name: janusgraph-default
+    volumes:
+      - janusgraph-default-data:/db/berkeley
     ports:
       - "8182:8182"
+    command: ["./janusgraph/bin/janusgraph-server.sh","console","conf/gremlin-server/gremlin-server-berkeleyje.yaml"]
 
 volumes:
   janusgraph-default-data:

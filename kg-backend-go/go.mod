@@ -7,7 +7,9 @@ require github.com/gofiber/fiber/v2 v2.52.10
 require (
 	github.com/gorilla/websocket v1.5.0 // indirect
 	github.com/nicksnyder/go-i18n/v2 v2.2.0 // indirect
+	github.com/stretchr/testify v1.10.0 // indirect
 	golang.org/x/text v0.13.0 // indirect
+	gopkg.in/yaml.v2 v2.4.0 // indirect
 )
 
 require (

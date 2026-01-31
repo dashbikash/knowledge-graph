@@ -1,7 +1,6 @@
 services:
   bigtable:
-    image: bikashpdash/google-cloud-cli:latest-arm64
-    container_name: bigtable
-    command: gcloud beta emulators bigtable start --host-port=0.0.0.0:8086
+    image: bikashpdash/gcloud-cli
     ports:
       - "8086:8086"
+    command: gcloud beta emulators bigtable start --host-port=0.0.0.0:8086
